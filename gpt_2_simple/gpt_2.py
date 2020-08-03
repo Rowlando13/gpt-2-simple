@@ -240,9 +240,12 @@ def finetune(sess,
     saver = tf.compat.v1.train.Saver(
         var_list=all_vars,
         max_to_keep=max_checkpoints)
-    print('saver initialized')
-    sess.run(tf.compat.v1.global_variables_initializer())
+    global=tf.compat.v1.global_variables_initializer()
+    print(global)
+    print('global')
     
+    sess.run(global)
+    print('session running')
     if restore_from == 'latest':
         ckpt = tf.train.latest_checkpoint(checkpoint_path)
         if ckpt is None:
