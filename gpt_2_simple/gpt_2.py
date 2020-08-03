@@ -236,7 +236,7 @@ def finetune(sess,
         summary_loss = tf.compat.v1.summary.scalar('loss', loss)
 
     summary_log = tf.compat.v1.summary.FileWriter(checkpoint_path)
-
+print(summary_log)
     saver = tf.compat.v1.train.Saver(
         var_list=all_vars,
         max_to_keep=max_checkpoints)
